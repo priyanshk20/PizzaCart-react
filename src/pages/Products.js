@@ -2,7 +2,7 @@
 const Products = () => {
     return (
         <div>
-            This is product's page
+            This is Product's page
         </div>
     )
 }
