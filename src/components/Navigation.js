@@ -10,9 +10,9 @@ const Navigation = () => {
     }
   return (
     <div>
-      <nav className="container mx-auto flex items-center justify-between py-4">
+      <nav className="container max-w-7xl mx-auto flex items-center justify-between py-4">
         <Link to="/">
-          <img style={{ height: 45 }} src="/images/logo.png" alt="logo" />
+          <img className="" style={{ height: 45 }} src="/images/logo.png" alt="logo" />
         </Link>
 
         <ul className="flex items-center">
@@ -37,3 +37,4 @@ const Navigation = () => {
 };
 
 export default Navigation;
+
