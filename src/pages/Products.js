@@ -1,9 +1,14 @@
-import {React,useState,useEffect} from "react";
+import {useState,useEffect,useContext} from "react";
 import Product from "../components/Product";
+import {CartContext} from "../CartContext";
+
+
 
 const Products = () => {
 
-  const[products,setProducts] = useState([]);
+  const {name} = useContext(CartContext);
+
+  const[products,setProducts] = useState([]); 
 
   useEffect(() =>{
     fetch('/api/products')

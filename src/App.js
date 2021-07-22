@@ -1,23 +1,25 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Cart from './pages/Cart';
-import Home from './pages/Home';
-import Navigation from './components/Navigation';
-import Products from './pages/Products';
-import SingleProduct from './pages/SingleProduct';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Cart from "./pages/Cart";
+import Home from "./pages/Home";
+import Navigation from "./components/Navigation";
+import Products from "./pages/Products";
+import SingleProduct from "./pages/SingleProduct";
+import {CartContext} from "./CartContext"
 
 const App = () => {
-    return(
-
-            <Router>
-                <Navigation/>
-                <Switch>
-                    <Route path="/" component={Home} exact></Route>
-                    <Route path="/products" exact component={Products}></Route>
-                    <Route path="/products/:_id" exact component={SingleProduct}></Route>
-                    <Route path="/cart" component={Cart}></Route>
-                </Switch>
-            </Router>
-    )
-}
+  return (
+    <Router>
+      <CartContext.Provider value={{}} >
+        <Navigation />
+        <Switch>
+          <Route path="/" component={Home} exact></Route>
+          <Route path="/products" exact component={Products}></Route>
+          <Route path="/products/:_id" exact component={SingleProduct}></Route>
+          <Route path="/cart" component={Cart}></Route>
+        </Switch>
+      </CartContext.Provider>
+    </Router>
+  );
+};
 
 export default App;
