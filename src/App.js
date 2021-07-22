@@ -4,9 +4,18 @@ import Home from "./pages/Home";
 import Navigation from "./components/Navigation";
 import Products from "./pages/Products";
 import SingleProduct from "./pages/SingleProduct";
-import {CartContext} from "./CartContext"
+import {CartContext} from "./CartContext";
+import {useEffect} from 'react';
 
 const App = () => {
+
+  const [cart,setCart] = useState({})
+
+  // fetch from local storage 
+  useEffect(() => {
+    window.localStorage.getItem('cart')
+  },[])
+  
   return (
     <Router>
       <CartContext.Provider value={{}} >
